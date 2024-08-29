@@ -1,0 +1,111 @@
+/* Define margens e padding para zero */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Imagem de fundo cobrindo toda a página */
+body {
+    background-image: url('img01.jpg');
+    background-size: cover; /* Faz a imagem cobrir toda a tela */
+    background-position: center;
+    background-repeat: no-repeat;
+    font-family: Arial, sans-serif;
+    overflow: hidden;
+    height: 100vh; /* Garante que o body ocupe toda a altura da viewport */
+}
+
+/* Animação estilo Matrix */
+#matrix-background {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    z-index: 1;
+}
+
+/* Banner superior transparente */
+#banner {
+    width: 100%;
+    height: 4cm; /* Altura de 4cm */
+    background-color: rgba(0, 0, 0, 0.3); /* Banner transparente */
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 2;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+/* Texto do banner */
+#banner-text {
+    font-size: 2rem;
+    color: white;
+    margin-bottom: 10px;
+}
+
+/* Botões dentro do banner */
+#buttons {
+    display: flex;
+    gap: 10px;
+}
+
+/* Estilo dos botões */
+.btn {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    background-color: rgba(0, 0, 0, 0.7);
+    color: white;
+    text-align: center;
+    text-decoration: none; /* Remove o sublinhado dos links */
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.btn:hover {
+    background-color: rgba(0, 0, 0, 0.9);
+}
+
+/* Estilo das letras do Matrix */
+.matrix-char {
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    color: rgba(0, 255, 0, 0.6); /* Letras verdes transparentes */
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 1rem;
+    white-space: nowrap;
+    opacity: 0.8;
+    animation: drop linear infinite;
+}
+
+/* Animação das letras caindo */
+@keyframes drop {
+    0% {
+        transform: translateY(-100%);
+    }
+    100% {
+        transform: translateY(100%);
+    }
+}
+
+/* Ajusta a velocidade da animação das letras */
+.matrix-char {
+    animation-duration: 1.5s; /* Duração da animação em segundos */
+}
+
+/* Conteúdo principal */
+#content {
+    position: relative;
+    z-index: 3;
+    text-align: center;
+    color: white;
+    font-size: 2rem;
+    margin-top: 4cm; /* Espaço abaixo do banner */
+}
